@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #1a1a1a;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 475px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.success-card {
+    background: rgba(20, 40, 35, 0.6);
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(0, 255, 136, 0.1),
+        inset 0 0 60px rgba(0, 255, 136, 0.05);
+}
+
+/* Checkmark with Glow */
+.checkmark-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+.checkmark-glow {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(0, 255, 136, 0.5) 0%, rgba(0, 255, 136, 0.3) 30%, rgba(0, 255, 136, 0) 70%);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    filter: blur(20px);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.7;
+    }
+}
+
+.checkmark {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 136, 0.8),
+        0 0 60px rgba(0, 255, 136, 0.5),
+        0 0 90px rgba(0, 255, 136, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: checkmark-glow 2s ease-in-out infinite;
+}
+
+@keyframes checkmark-glow {
+    0%, 100% {
+        box-shadow: 
+            0 0 30px rgba(0, 255, 136, 0.8),
+            0 0 60px rgba(0, 255, 136, 0.5),
+            0 0 90px rgba(0, 255, 136, 0.3),
+            inset 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 0 40px rgba(0, 255, 136, 1),
+            0 0 80px rgba(0, 255, 136, 0.6),
+            0 0 120px rgba(0, 255, 136, 0.4),
+            inset 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Text */
+.title {
+    font-size: clamp(22px, 5vw, 28px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 136, 0.5),
+        0 0 20px rgba(0, 255, 136, 0.3);
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: clamp(15px, 4vw, 17px);
+    margin-bottom: 30px;
+    color: #cccccc;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+.subtitle strong {
+    color: #ffffff;
+}
+
+/* CTA Button */
+.cta-button {
+    width: 100%;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+    color: #0a1f1a;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(15px, 4vw, 17px);
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 20px rgba(0, 255, 136, 0.5),
+        0 0 30px rgba(0, 255, 136, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 56px;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive Mobile Optimizations */
+@media (max-width: 480px) {
+    .main-content {
+        padding: 15px;
+    }
+    
+    .success-card {
+        padding: 40px 20px;
+        border-radius: 16px;
+        max-width: 100%;
+    }
+    
+    .checkmark-container {
+        margin-bottom: 25px;
+        height: 90px;
+    }
+    
+    .checkmark-glow {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .checkmark {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .checkmark svg {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .title {
+        margin-bottom: 16px;
+    }
+    
+    .subtitle {
+        margin-bottom: 25px;
+        padding: 0 5px;
+    }
+    
+    .cta-button {
+        padding: 16px 24px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .success-card {
+        padding: 35px 16px;
+    }
+    
+    .checkmark {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .checkmark svg {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+    .main-content {
+        padding: 10px 20px;
+    }
+    
+    .success-card {
+        padding: 30px 25px;
+    }
+    
+    .checkmark-container {
+        margin-bottom: 15px;
+        height: 70px;
+    }
+    
+    .checkmark {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .checkmark svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .title {
+        margin-bottom: 12px;
+        font-size: 20px;
+    }
+    
+    .subtitle {
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+    
+    .cta-button {
+        padding: 14px 28px;
+        min-height: 50px;
+    }
+}
+
+/* Hover effects only for non-touch devices */
+@media (hover: hover) {
+    .cta-button:hover::before {
+        left: 100%;
+    }
+    
+    .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            0 6px 30px rgba(0, 255, 136, 0.7),
+            0 0 50px rgba(0, 255, 136, 0.5),
+            inset 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+}

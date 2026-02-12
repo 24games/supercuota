@@ -159,6 +159,10 @@ body {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     min-height: 56px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.4;
 }
 
 .cta-button::before {

@@ -1,20 +1,10 @@
 {
   "name": "supercuota",
   "version": 2,
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "*.css",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
+  "rewrites": [
+    { "source": "/cr1_VD_BarcaXatm", "destination": "/cr1_VD_BarcaXatm.html" },
+    { "source": "/cr2_VD_BarcaXatm", "destination": "/cr2_VD_BarcaXatm.html" },
+    { "source": "/cr3_VD_BarcaXatm", "destination": "/cr3_VD_BarcaXatm.html" },
+    { "source": "/cr1_EST_BarcaXatm", "destination": "/cr1_EST_BarcaXatm.html" }
   ]
 }

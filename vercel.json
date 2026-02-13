@@ -5,6 +5,14 @@
     { "source": "/cr1_VD_BarcaXatm", "destination": "/cr1_VD_BarcaXatm.html" },
     { "source": "/cr2_VD_BarcaXatm", "destination": "/cr2_VD_BarcaXatm.html" },
     { "source": "/cr3_VD_BarcaXatm", "destination": "/cr3_VD_BarcaXatm.html" },
-    { "source": "/cr1_EST_BarcaXatm", "destination": "/cr1_EST_BarcaXatm.html" }
+    { "source": "/cr1_EST_BarcaXatm", "destination": "/cr1_EST_BarcaXatm.html" },
+    { "source": "/cr1_EST_SO_RealM_x_RealS", "destination": "/cr1_EST_SO_RealM_x_RealS.html" },
+    { "source": "/cr2_EST_SO_RealM_x_RealS", "destination": "/cr2_EST_SO_RealM_x_RealS.html" },
+    { "source": "/Cr1_VD_SO_RealM_x_RealS", "destination": "/Cr1_VD_SO_RealM_x_RealS.html" },
+    { "source": "/Cr2_VD_SO_RealM_x_RealS", "destination": "/Cr2_VD_SO_RealM_x_RealS.html" },
+    { "source": "/Cr1_Est_Mult_01", "destination": "/Cr1_Est_Mult_01.html" },
+    { "source": "/Cr2_Est_Mult_01", "destination": "/Cr2_Est_Mult_01.html" },
+    { "source": "/Cr1_VD_Mult_01", "destination": "/Cr1_VD_Mult_01.html" },
+    { "source": "/Cr2_VD_Mult_01", "destination": "/Cr2_VD_Mult_01.html" }
   ]
 }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Super Cuota Liberada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="success-card">
+                <div class="checkmark-container">
+                    <div class="checkmark-glow"></div>
+                    <div class="checkmark">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M20 30L27 37L40 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <h1 class="title">SUPER CUOTA LIBERADA!</h1>
+                
+                <p class="subtitle">
+                    Pulsa el botón de abajo para <strong>LIBERAR EL BOLETO!</strong>
+                </p>
+                
+                <a href="https://wa.me/13292180578?text=Quiero rescatar mi jugada VIP" class="cta-button">
+                    ACCEDE AHORA
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    setTimeout(function() {
+        try {
+            var webhookUrl = "https://blead-n8n-docker.y1jnlb.easypanel.host/webhook/lead-manychat";
+            var uid = localStorage.getItem('lead_uid');
+            if (!uid) {
+                uid = 'uid-' + Date.now() + '-' + Math.floor(Math.random() * 1000000);
+                localStorage.setItem('lead_uid', uid);
+            }
+            var urlParams = new URLSearchParams(window.location.search);
+            var adId = urlParams.get('ad_id') || urlParams.get('h_ad_id') || '';
+            var fbclid = urlParams.get('fbclid') || '';
+            var dados = {
+                uid: uid,
+                ad_id: adId,
+                fbclid: fbclid,
+                user_agent: navigator.userAgent,
+                page_url: window.location.href,
+                tipo_origem: "rastreamento_geral"
+            };
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", webhookUrl, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.send(JSON.stringify(dados));
+            var links = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+            for (var i = 0; i < links.length; i++) {
+                try {
+                    var url = new URL(links[i].href);
+                    url.searchParams.set('ref', uid);
+                    links[i].href = url.toString();
+                } catch (e) {}
+            }
+        } catch (e) {}
+    }, 500);
+    </script>
+</body>
+</html>

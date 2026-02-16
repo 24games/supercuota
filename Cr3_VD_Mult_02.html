@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#1a1a1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Cuota 100X Liberada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="success-card">
+                <div class="checkmark-container">
+                    <div class="checkmark-glow"></div>
+                    <div class="checkmark">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M20 30L27 37L40 24" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <h1 class="title">CUOTA 100X LIBERADA</h1>
+                
+                <p class="subtitle">
+                    Pulsa el botón de abajo para <strong>LIBERAR EL BOLETO!</strong>
+                </p>
+                
+                <a href="https://wa.me/13292180578?text=Quiero acceder a la cuota VIP" class="cta-button">
+                    ACCEDE AHORA
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+    (function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var adId = urlParams.get('ad_id');
+        
+        if (adId) {
+            var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+            
+            whatsappLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'https://blead-n8n-docker.y1jnlb.easypanel.host/webhook/captura-ad-id', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        ad_id: adId,
+                        timestamp: new Date().toISOString()
+                    }));
+                });
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

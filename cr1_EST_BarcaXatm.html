@@ -37,62 +37,26 @@
     </div>
 
     <script>
-    setTimeout(function() {
-        try {
-            var webhookUrl = "https://blead-n8n-docker.y1jnlb.easypanel.host/webhook/lead-manychat";
-            var uid = localStorage.getItem('lead_uid');
-            if (!uid) {
-                uid = 'uid-' + Date.now() + '-' + Math.floor(Math.random() * 1000000);
-                localStorage.setItem('lead_uid', uid);
-            }
-            var urlParams = new URLSearchParams(window.location.search);
-            var adId = urlParams.get('ad_id') || urlParams.get('h_ad_id') || '';
-            var fbclid = urlParams.get('fbclid') || '';
-            var dados = {
-                uid: uid,
-                ad_id: adId,
-                fbclid: fbclid,
-                user_agent: navigator.userAgent,
-                page_url: window.location.href,
-                tipo_origem: "rastreamento_geral"
-            };
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", webhookUrl, true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify(dados));
-            var links = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
-            for (var i = 0; i < links.length; i++) {
-                try {
-                    var url = new URL(links[i].href);
-                    url.searchParams.set('ref', uid);
-                    links[i].href = url.toString();
-                } catch (e) {}
-            }
+    (function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var adId = urlParams.get('ad_id');
+        
+        if (adId) {
+            var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
             
-            // CAPTURA AD_ID AO CLICAR NO WHATSAPP
-            if (adId) {
-                for (var i = 0; i < links.length; i++) {
-                    (function(link) {
-                        link.addEventListener('click', function() {
-                            try {
-                                var xhrCaptura = new XMLHttpRequest();
-                                xhrCaptura.open('POST', 'https://blead-n8n-docker.y1jnlb.easypanel.host/webhook/captura-ad-id', true);
-                                xhrCaptura.setRequestHeader('Content-Type', 'application/json');
-                                xhrCaptura.send(JSON.stringify({
-                                    ad_id: adId,
-                                    timestamp: new Date().toISOString(),
-                                    page_url: window.location.href,
-                                    uid: uid
-                                }));
-                            } catch (e) {
-                                console.error('Erro ao capturar ad_id:', e);
-                            }
-                        });
-                    })(links[i]);
-                }
-            }
-        } catch (e) {}
-    }, 500);
+            whatsappLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'https://blead-n8n-docker.y1jnlb.easypanel.host/webhook/captura-ad-id', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.send(JSON.stringify({
+                        ad_id: adId,
+                        timestamp: new Date().toISOString()
+                    }));
+                });
+            });
+        }
+    })();
     </script>
 </body>
 </html>

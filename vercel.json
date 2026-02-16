@@ -13,6 +13,8 @@
     { "source": "/Cr1_Est_Mult_01", "destination": "/Cr1_Est_Mult_01.html" },
     { "source": "/Cr2_Est_Mult_01", "destination": "/Cr2_Est_Mult_01.html" },
     { "source": "/Cr1_VD_Mult_01", "destination": "/Cr1_VD_Mult_01.html" },
-    { "source": "/Cr2_VD_Mult_01", "destination": "/Cr2_VD_Mult_01.html" }
+    { "source": "/Cr2_VD_Mult_01", "destination": "/Cr2_VD_Mult_01.html" },
+    { "source": "/Cr2_VD_Mult_02", "destination": "/Cr2_VD_Mult_02.html" },
+    { "source": "/Cr1_VD_Mult_02", "destination": "/Cr1_VD_Mult_02.html" }
   ]
 }

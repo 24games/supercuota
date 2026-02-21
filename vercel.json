@@ -16,6 +16,8 @@
     { "source": "/Cr2_VD_Mult_01", "destination": "/Cr2_VD_Mult_01.html" },
     { "source": "/Cr2_VD_Mult_02", "destination": "/Cr2_VD_Mult_02.html" },
     { "source": "/Cr1_VD_Mult_02", "destination": "/Cr1_VD_Mult_02.html" },
-    { "source": "/Cr3_VD_Mult_02", "destination": "/Cr3_VD_Mult_02.html" }
+    { "source": "/Cr3_VD_Mult_02", "destination": "/Cr3_VD_Mult_02.html" },
+    { "source": "/Cr1_v6_Futebol", "destination": "/Cr1_v6_Futebol.html" },
+    { "source": "/Cr2_v6_Futebol", "destination": "/Cr2_v6_Futebol.html" }
   ]
 }

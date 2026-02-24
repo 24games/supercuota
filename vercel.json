@@ -20,6 +20,9 @@
     { "source": "/Cr1_v6_Futebol", "destination": "/Cr1_v6_Futebol.html" },
     { "source": "/Cr2_v6_Futebol", "destination": "/Cr2_v6_Futebol.html" },
     { "source": "/Cr3_v6_Futebol", "destination": "/Cr3_v6_Futebol.html" },
-    { "source": "/Cr4_v6_Futebol", "destination": "/Cr4_v6_Futebol.html" }
+    { "source": "/Cr4_v6_Futebol", "destination": "/Cr4_v6_Futebol.html" },
+    { "source": "/cr1_v7_futebol", "destination": "/cr1_v7_futebol.html" },
+    { "source": "/cr2_v7_futebol", "destination": "/cr2_v7_futebol.html" },
+    { "source": "/cr3_v7_futebol", "destination": "/cr3_v7_futebol.html" }
   ]
 }

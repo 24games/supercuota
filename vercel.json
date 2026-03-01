@@ -27,6 +27,10 @@
     { "source": "/CR1_LEVA9", "destination": "/CR1_LEVA9.html" },
     { "source": "/CR2_LEVA9", "destination": "/CR2_LEVA9.html" },
     { "source": "/CR3_LEVA9", "destination": "/CR3_LEVA9.html" },
-    { "source": "/CR4_LEVA9", "destination": "/CR4_LEVA9.html" }
+    { "source": "/CR4_LEVA9", "destination": "/CR4_LEVA9.html" },
+    { "source": "/Cr5_leva9", "destination": "/Cr5_leva9.html" },
+    { "source": "/Cr6_leva9", "destination": "/Cr6_leva9.html" },
+    { "source": "/Cr7_leva9", "destination": "/Cr7_leva9.html" },
+    { "source": "/Cr8_leva9", "destination": "/Cr8_leva9.html" }
   ]
 }
